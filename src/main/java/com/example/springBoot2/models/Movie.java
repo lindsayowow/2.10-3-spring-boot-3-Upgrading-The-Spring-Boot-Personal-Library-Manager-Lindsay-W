@@ -1,6 +1,7 @@
 package com.example.springBoot2.models;
 
 public class Movie  {
+    private int id;
     private String name;
     private int year;
     private String director;
@@ -9,11 +10,20 @@ public class Movie  {
     public Movie() {
     }
 
-    public Movie(String name, String director, int year, int duration) {
+    public Movie(int id, String name, String director, int year, int duration) {
+        this.id = id;
         this.name = name;
         this.year = year;
         this.director = director;
         this.runtime = duration;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
