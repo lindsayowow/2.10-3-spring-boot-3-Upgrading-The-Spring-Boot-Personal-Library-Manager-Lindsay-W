@@ -1,5 +1,6 @@
 package com.example.springBoot2.controllers;
 
+import com.example.springBoot2.models.Album;
 import com.example.springBoot2.models.Movie;
 import com.example.springBoot2.repositories.BookRepository;
 import com.example.springBoot2.repositories.MovieRepository;
@@ -15,4 +16,10 @@ public class MovieController {
     public MovieController(MovieRepository movieRepository) {
         this.movieRepository = movieRepository;
     }
+
+    @GetMapping("/all")
+    public List<Movie> getMoviess() {
+        return movieRepository.findAll();
+    }
+
 }

@@ -14,4 +14,10 @@ public class AlbumController {
     public AlbumController(AlbumRepository albumRepository) {
         this.albumRepository = albumRepository;
     }
+
+    @GetMapping("/all")
+    public List<Album> getAlbums() {
+        return albumRepository.findAll();
+    }
+
 }

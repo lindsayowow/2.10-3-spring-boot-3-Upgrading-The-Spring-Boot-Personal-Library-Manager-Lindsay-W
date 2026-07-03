@@ -1,5 +1,6 @@
 package com.example.springBoot2.controllers;
 
+import com.example.springBoot2.models.Album;
 import com.example.springBoot2.models.Book;
 import com.example.springBoot2.repositories.BookRepository;
 import org.springframework.web.bind.annotation.*;
@@ -14,4 +15,10 @@ public class BookController {
     public BookController(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
+
+    @GetMapping("/all")
+    public List<Book> getBooks() {
+        return bookRepository.findAll();
+    }
+
 }
